@@ -44,3 +44,7 @@ def get_tag_by_name(name: str) -> Tag:
 
 def get_tags_by_popularity(n: int):
     return Tag.select().where(Tag.popularity >= n)
+
+
+def get_all_posts(limit: int = 10000000) -> list[Post]:
+    return list(Post.select().limit(limit))
